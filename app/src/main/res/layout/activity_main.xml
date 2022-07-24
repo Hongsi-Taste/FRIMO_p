@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <!-- Toolbar -->
     <com.google.android.material.appbar.AppBarLayout
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -19,6 +19,30 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!--Floating menu&button-->
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="@dimen/fab_size_normal"
+        android:layout_height="@dimen/fab_size_normal"
+        android:id="@+id/floating_menu">
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="@dimen/fab_size_normal"
+            android:layout_height="@dimen/fab_size_normal"
+            android:id="@+id/floating_btn1"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="@dimen/fab_size_normal"
+            android:layout_height="@dimen/fab_size_normal"
+            android:id="@+id/floating_btn2"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="@dimen/fab_size_normal"
+            android:layout_height="@dimen/fab_size_normal"
+            android:id="@+id/floating_btn3"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="@dimen/fab_size_normal"
+            android:layout_height="@dimen/fab_size_normal"
+            android:id="@+id/floating_btn4"/>
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
