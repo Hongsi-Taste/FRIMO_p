@@ -3,11 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/kwonw/AndroidStudioProjects/FRIMO_p/app/src/main/res/drawable/comu_ground_layout.xml" value="0.342" />
-        <entry key="..\:/Users/kwonw/AndroidStudioProjects/FRIMO_p/app/src/main/res/drawable/comu_ground_stroke.xml" value="0.341" />
-        <entry key="..\:/Users/kwonw/AndroidStudioProjects/FRIMO_p/app/src/main/res/drawable/main_news.xml" value="0.341" />
-        <entry key="..\:/Users/kwonw/AndroidStudioProjects/FRIMO_p/app/src/main/res/drawable/title_back.xml" value="0.341" />
-        <entry key="..\:/Users/kwonw/AndroidStudioProjects/FRIMO_p/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/User/StudioProjects/FRIMO_p/app/src/main/res/layout/activity_login_site.xml" value="0.2821557971014493" />
+        <entry key="..\:/Users/User/StudioProjects/FRIMO_p/app/src/main/res/layout/activity_main.xml" value="0.2821557971014493" />
+        <entry key="..\:/Users/kwonw/AndroidStudioProjects/FRIMO_p/app/src/main/res/layout/activity_main.xml" value="0.10674157303370786" />
         <entry key="..\:/Users/kwonw/AndroidStudioProjects/FRIMO_p/app/src/main/res/layout/main_page.xml" value="0.204296875" />
         <entry key="..\:/Users/kwonw/AndroidStudioProjects/FRIMO_p/app/src/main/res/layout/toolbar_custom.xml" value="0.2734375" />
       </map>
