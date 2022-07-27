@@ -16,5 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Floating Action Button
         FloatingActionsMenu fam = (FloatingActionsMenu) findViewById(R.id.floating_menu);
+
     }
 }
