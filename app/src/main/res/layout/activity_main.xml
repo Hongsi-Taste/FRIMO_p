@@ -211,5 +211,4 @@
             android:id="@+id/floating_btn4"/>
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
