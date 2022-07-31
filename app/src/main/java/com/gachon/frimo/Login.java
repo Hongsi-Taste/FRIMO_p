@@ -1,14 +1,14 @@
 package com.gachon.frimo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class login_site extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_site);
+        setContentView(R.layout.activity_login);
     }
 }
