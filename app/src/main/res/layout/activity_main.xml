@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Toolbar -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar_custom" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <!-- Logo image -->
     <ImageView
         android:id="@+id/imageview_logo"
@@ -30,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Trend report ground-->
     <LinearLayout
@@ -53,7 +39,8 @@
             android:text="TrendReport"
             android:textColor="@color/white"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"/>
 
         <TextView
             android:id="@+id/textview_news1"
@@ -64,7 +51,8 @@
             android:text="newsHeadline1"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            tools:ignore="HardcodedText"/>
 
         <TextView
             android:id="@+id/textview_news2"
@@ -75,7 +63,8 @@
             android:text="newsHeadline2"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            tools:ignore="HardcodedText"/>
 
         <TextView
             android:id="@+id/textview_news3"
@@ -86,7 +75,8 @@
             android:text="newsHeadline3"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            tools:ignore="HardcodedText"/>
 
     </LinearLayout>
 
@@ -109,7 +99,8 @@
             android:text="Community"
             android:textColor="@color/white"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -128,7 +119,8 @@
                 android:text="New Followers: 000"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                tools:ignore="HardcodedText"/>
 
             <TextView
                 android:id="@+id/new_comments"
@@ -141,7 +133,8 @@
                 android:text="New Comments: 000"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                tools:ignore="HardcodedText"/>
 
         </LinearLayout>
 
@@ -167,7 +160,8 @@
             android:text="Diary"
             android:textColor="@color/white"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -186,7 +180,8 @@
                 android:text="Hello Good morning Hi Sup"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                tools:ignore="HardcodedText"/>
 
             <TextView
                 android:id="@+id/diary_com2"
@@ -198,7 +193,8 @@
                 android:text="Take my soul"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                tools:ignore="HardcodedText"/>
 
             <TextView
                 android:id="@+id/diary_com3"
@@ -211,13 +207,14 @@
                 android:text="The contract is now in effect"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                tools:ignore="HardcodedText"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <!--Floating menu&button-->
+    <!-- Floating button -->
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/floating_menu"
         android:layout_width="@dimen/fab_size_normal"
@@ -233,7 +230,7 @@
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/floating_btn2"
             android:layout_width="@dimen/fab_size_normal"
-            android:layout_height="@dimen/fab_size_normal" />
+            android:layout_height="@dimen/fab_size_normal"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/floating_btn3"
