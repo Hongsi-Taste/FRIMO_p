@@ -25,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".FindId" />
+        <activity android:name=".FindPw" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FriendlyCommunity" />
         <activity android:name=".ChangeProfile" />
