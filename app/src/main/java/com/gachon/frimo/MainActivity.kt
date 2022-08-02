@@ -21,8 +21,6 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, FriendlyCommunity::class.java)
             startActivity(intent);
-            finish();
-
         }
     }
 
