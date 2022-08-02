@@ -17,10 +17,18 @@ class MainActivity : AppCompatActivity() {
         var fam: FloatingActionsMenu = findViewById(R.id.floating_menu)
 
         var fam_friendly_community: FloatingActionButton = findViewById(R.id.floating_btn2)
+        var fam_trend_report: FloatingActionButton = findViewById(R.id.floating_btn3)
+
         fam_friendly_community.setOnClickListener{
 
             val intent = Intent(this, FriendlyCommunity::class.java)
-            startActivity(intent);
+            startActivity(intent)
+        }
+
+        fam_trend_report.setOnClickListener{
+
+            val intent = Intent(this, TrendReport::class.java)
+            startActivity(intent)
         }
     }
 

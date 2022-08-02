@@ -33,6 +33,7 @@
         <activity android:name=".ChangeProfile" />
         <activity android:name=".AddContents" />
         <activity android:name=".FriendCandidate" />
+        <activity android:name=".TrendReport" />
 
     </application>
 
