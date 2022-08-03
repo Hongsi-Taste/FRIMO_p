@@ -24,8 +24,11 @@ class FindPw : AppCompatActivity() {
         // 기존 action bar 제거 후 custom action bar 넣기
         supportActionBar!!.hide()
 
-        // menu icon click listener
+        // set menu icon
         val icon = findViewById<ImageView>(R.id.ic_menu)
+        icon.setImageResource(R.drawable.ic_list)
+
+        // menu icon click listener
         icon.setOnClickListener {
                 view -> menu.showAsDropDown(view)
         }
