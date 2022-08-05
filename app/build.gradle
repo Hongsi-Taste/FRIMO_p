@@ -31,15 +31,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
 
-    //FloatingActionButton
+    // FloatingActionButton
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
     // Powermenu
     implementation "com.github.skydoves:powermenu:2.2.0"
+
+    // Needs
+    implementation "com.github.skydoves:needs:1.1.2"
 
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
