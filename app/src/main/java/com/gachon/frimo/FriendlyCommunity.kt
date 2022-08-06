@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.gachon.frimo.databinding.FriendlyCommunityBinding
 import com.skydoves.powermenu.MenuAnimation
 import com.skydoves.powermenu.OnMenuItemClickListener
 import com.skydoves.powermenu.PowerMenu
@@ -15,10 +16,14 @@ import com.skydoves.powermenu.PowerMenuItem
 class FriendlyCommunity : AppCompatActivity() {
 
     private lateinit var menu : PowerMenu
+    private lateinit var binding: FriendlyCommunityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.friendly_community)
+
+        binding = FriendlyCommunityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // 기존 action bar 제거 후 custom action bar 넣기
         supportActionBar!!.hide()

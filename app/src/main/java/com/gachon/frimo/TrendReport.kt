@@ -5,15 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.gachon.frimo.entity.Report
 import com.gachon.frimo.adapter.TrendReportAdapter
+import com.gachon.frimo.databinding.TrendReportBinding
 
 class TrendReport : AppCompatActivity(){
 
     private val reports: ArrayList<Report> = ArrayList() // Report
+    private lateinit var binding: TrendReportBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.trend_report)
+
+        binding = TrendReportBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // RecyclerView에 보여 줄 Report 받아오기
         prepareData();
