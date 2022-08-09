@@ -228,12 +228,12 @@
             android:layout_height="@dimen/fab_size_normal" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_btn2"
+            android:id="@+id/floating_btn_friendly_community"
             android:layout_width="@dimen/fab_size_normal"
             android:layout_height="@dimen/fab_size_normal"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_btn3"
+            android:id="@+id/floating_btn_trend_report"
             android:layout_width="@dimen/fab_size_normal"
             android:layout_height="@dimen/fab_size_normal" />
 
