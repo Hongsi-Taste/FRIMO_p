@@ -60,12 +60,11 @@ class FindId : AppCompatActivity() {
     private val changeMenuItemClickListener =
         OnMenuItemClickListener<PowerMenuItem> { position, item ->
             Toast.makeText(baseContext, item.title, Toast.LENGTH_SHORT).show()
-            val intent: Intent
+
+            lateinit var intent: Intent
             when (position) {
-                1 -> {
-                    intent = Intent(this, FindPw::class.java)
-                    startActivity(intent)
-                }
+                1 -> intent = Intent(this, FindPw::class.java)
             }
+            startActivity(intent)
         }
 }

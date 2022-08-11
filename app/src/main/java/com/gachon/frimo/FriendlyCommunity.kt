@@ -102,20 +102,13 @@ class FriendlyCommunity : AppCompatActivity() {
         OnMenuItemClickListener<PowerMenuItem> { position, item ->
             Toast.makeText(baseContext, item.title, Toast.LENGTH_SHORT).show()
 
+            lateinit var intent: Intent
             when (position) {
-                0 -> {
-                    val intent = Intent(this, ModifyProfile::class.java)
-                    startActivity(intent)
-                }
-                1 -> {
-                    val intent = Intent(this, FriendCandidate::class.java)
-                    startActivity(intent)
-                }
-                2 -> {
-                    val intent = Intent(this, AddContents::class.java)
-                    startActivity(intent)
-                }
+                0 -> intent = Intent(this, ModifyProfile::class.java)
+                1 -> intent = Intent(this, FriendCandidate::class.java)
+                2 -> intent = Intent(this, AddContents::class.java)
             }
+            startActivity(intent)
         }
 
     private fun prepareInterestData() {
@@ -137,6 +130,7 @@ class FriendlyCommunity : AppCompatActivity() {
 
     private fun prepareContentData() {
 
+        // Todo: 서버에서 content data 받아오기
         content.clear()
         content.add(Content(R.drawable.img_sample, "test1", "test1 description"))
         content.add(Content(R.drawable.img_sample, "test2", "test2 description"))
