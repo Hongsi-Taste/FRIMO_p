@@ -36,37 +36,32 @@ class FriendlyCommunity : AppCompatActivity() {
         // 기존 action bar 제거 후 custom action bar 넣기
         supportActionBar!!.hide()
 
-        binding.labelInterests.setOnClickListener{
+        with(binding){
 
-            prepareInterestData(); // RecyclerView에 보여 줄 data 받아오기
-            binding.interests.setText(interest.size.toString())
-            binding.recyclerView.adapter = InterestAdapter(interest)
-            binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
-        }
+            labelInterests.setOnClickListener{
 
-        binding.labelFollowers.setOnClickListener{
+                prepareInterestData(); // RecyclerView에 보여 줄 data 받아오기
+                binding.interests.setText(interest.size.toString())
+                binding.recyclerView.adapter = InterestAdapter(interest)
+                binding.recyclerView.layoutManager = GridLayoutManager(it.context, 2)
+            }
 
-            prepareFollowerData();
-            binding.followers.setText(follow.size.toString())
-            binding.recyclerView.adapter = FollowAdapter(follow)
-            binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        }
+            labelFollowers.setOnClickListener{
 
-        binding.labelFollowing.setOnClickListener{
+                prepareFollowerData();
+                binding.followers.setText(follow.size.toString())
+                binding.recyclerView.adapter = FollowAdapter(follow)
+                binding.recyclerView.layoutManager = LinearLayoutManager(it.context)
+            }
 
-            prepareFollowingData();
-            binding.following.setText(follow.size.toString())
-            binding.recyclerView.adapter = FollowAdapter(follow)
-            binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        }
+            labelFollowing.setOnClickListener{
 
-        // menu
-        val icon = findViewById<ImageView>(R.id.ic_menu)
-        icon.setImageResource(R.drawable.ic_list)
+                prepareFollowingData();
+                binding.following.setText(follow.size.toString())
+                binding.recyclerView.adapter = FollowAdapter(follow)
+                binding.recyclerView.layoutManager = LinearLayoutManager(it.context)
+            }
 
-        // menu icon click listener
-        icon.setOnClickListener {
-                view -> menu.showAsDropDown(view)
         }
 
         // menu
@@ -80,6 +75,14 @@ class FriendlyCommunity : AppCompatActivity() {
             .setOnMenuItemClickListener(changeMenuItemClickListener)
             .build()
 
+        // menu icon
+        val icon = findViewById<ImageView>(R.id.ic_menu)
+        icon.setImageResource(R.drawable.ic_list)
+
+        // menu icon click listener
+        icon.setOnClickListener {
+                view -> menu.showAsDropDown(view)
+        }
 
     }
 
@@ -87,18 +90,18 @@ class FriendlyCommunity : AppCompatActivity() {
     private val changeMenuItemClickListener =
         OnMenuItemClickListener<PowerMenuItem> { position, item ->
             Toast.makeText(baseContext, item.title, Toast.LENGTH_SHORT).show()
-            val intent: Intent
+
             when (position) {
                 0 -> {
-                    intent = Intent(this, ModifyProfile::class.java)
+                    val intent = Intent(this, ModifyProfile::class.java)
                     startActivity(intent)
                 }
                 1 -> {
-                    intent = Intent(this, FriendCandidate::class.java)
+                    val intent = Intent(this, FriendCandidate::class.java)
                     startActivity(intent)
                 }
                 2 -> {
-                    intent = Intent(this, AddContents::class.java)
+                    val intent = Intent(this, AddContents::class.java)
                     startActivity(intent)
                 }
             }
