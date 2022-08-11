@@ -1,11 +1,15 @@
 package com.gachon.frimo.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.gachon.frimo.FriendlyCommunity
 import com.gachon.frimo.R
 import com.gachon.frimo.entity.UserProfile
 
@@ -16,13 +20,18 @@ class FriendCandidateAdapter(private val dataSet: ArrayList<UserProfile>) : Recy
         val imageview_userProfile: ImageView
         val textview_userName: TextView
         val textview_userDesc: TextView
+        val button_add: Button
 
         init {
 
             // Define click listener for the ViewHolder's View.
+            // Todo: user click시 친구 Friendly Community 화면으로 이동
+            // Todo: add button click listener
             imageview_userProfile = view.findViewById(R.id.imageview_userProfile)
             textview_userName = view.findViewById(R.id.textview_userName)
             textview_userDesc = view.findViewById(R.id.textview_userDesc)
+            button_add = view.findViewById(R.id.button_add)
+
         }
     }
 
@@ -32,11 +41,7 @@ class FriendCandidateAdapter(private val dataSet: ArrayList<UserProfile>) : Recy
         return ViewHolder(view)
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
 
         viewHolder.imageview_userProfile.setImageResource(dataSet[position].profileImage)
         viewHolder.textview_userName.text = dataSet[position].name
