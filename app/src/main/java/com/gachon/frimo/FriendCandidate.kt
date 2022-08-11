@@ -18,10 +18,8 @@ class FriendCandidate : AppCompatActivity() {
         binding = FriendCandidateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // RecyclerView에 보여 줄 Report 받아오기
-        prepareData();
-
         // RecyclerView 셋팅
+        prepareData(); // RecyclerView에 보여 줄 Report 받아오기
         binding.FriendCandidateRecyclerView.adapter = FriendCandidateAdapter(user)
     }
 

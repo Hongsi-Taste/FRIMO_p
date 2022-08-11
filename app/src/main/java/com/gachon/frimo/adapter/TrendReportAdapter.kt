@@ -27,7 +27,6 @@ class TrendReportAdapter(private val dataSet: ArrayList<Report>) : RecyclerView.
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.trend_report_view, viewGroup, false)
-
         return ViewHolder(view)
     }
 
@@ -36,9 +35,7 @@ class TrendReportAdapter(private val dataSet: ArrayList<Report>) : RecyclerView.
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-
-        // Todo: 현재는 저장된 그림 파일을 가져오나, 추후 인터넷에서 가져오도록 작업
-        viewHolder.imageView.setImageResource(R.drawable.img_sample)
+        viewHolder.imageView.setImageResource(dataSet[position].img)
         viewHolder.textView.text = dataSet[position].content
     }
 

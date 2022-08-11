@@ -19,18 +19,15 @@ class TrendReport : AppCompatActivity(){
         binding = TrendReportBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // RecyclerView에 보여 줄 Report 받아오기
-        prepareData();
-
         // RecyclerView 셋팅
-        val recyclerView: RecyclerView = findViewById(R.id.TrendReportRecyclerView)
-        recyclerView.adapter = TrendReportAdapter(reports)
+        prepareData(); // RecyclerView에 보여 줄 data 받아오기
+        binding.TrendReportRecyclerView.adapter = TrendReportAdapter(reports)
 
     }
 
     private fun prepareData() {
 
-        // Todo: 서버랑 연결해 User data 받아오기
+        // Todo: 크롤링으로 data 받아오기
         reports.add(Report(R.drawable.img_sample, "test1"))
         reports.add(Report(R.drawable.img_sample, "test2"))
         reports.add(Report(R.drawable.img_sample, "test3"))

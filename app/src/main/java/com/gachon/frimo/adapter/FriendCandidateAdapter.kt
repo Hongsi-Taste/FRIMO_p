@@ -29,7 +29,6 @@ class FriendCandidateAdapter(private val dataSet: ArrayList<UserProfile>) : Recy
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.friend_candidate_view, viewGroup, false)
-
         return ViewHolder(view)
     }
 
@@ -39,8 +38,7 @@ class FriendCandidateAdapter(private val dataSet: ArrayList<UserProfile>) : Recy
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
 
-        // Todo: 현재는 저장된 그림 파일을 가져오나, 추후 인터넷에서 가져오도록 작업
-        viewHolder.imageview_userProfile.setImageResource(R.drawable.img_sample)
+        viewHolder.imageview_userProfile.setImageResource(dataSet[position].profileImage)
         viewHolder.textview_userName.text = dataSet[position].name
         viewHolder.textview_userDesc.text = dataSet[position].desc
     }
