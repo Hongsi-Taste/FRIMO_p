@@ -44,33 +44,33 @@ class FriendlyCommunity : AppCompatActivity() {
             labelInterests.setOnClickListener {
 
                 prepareInterestData() // RecyclerView에 보여 줄 data 받아오기
-                binding.interests.setText(interest.size.toString())
-                binding.recyclerView.adapter = InterestAdapter(interest)
-                binding.recyclerView.layoutManager = GridLayoutManager(it.context, 2)
+                interests.setText(interest.size.toString())
+                recyclerView.adapter = InterestAdapter(interest)
+                recyclerView.layoutManager = GridLayoutManager(it.context, 2)
             }
 
             labelContents.setOnClickListener {
 
                 prepareContentData()
-                binding.contents.setText(content.size.toString())
-                binding.recyclerView.adapter = ContentAdapter(content)
-                binding.recyclerView.layoutManager = LinearLayoutManager(it.context)
+                contents.setText(content.size.toString())
+                recyclerView.adapter = ContentAdapter(content)
+                recyclerView.layoutManager = LinearLayoutManager(it.context)
             }
 
             labelFollowers.setOnClickListener {
 
                 prepareFollowerData()
-                binding.followers.setText(follow.size.toString())
-                binding.recyclerView.adapter = FollowAdapter(follow)
-                binding.recyclerView.layoutManager = LinearLayoutManager(it.context)
+                followers.setText(follow.size.toString())
+                recyclerView.adapter = FollowAdapter(follow)
+                recyclerView.layoutManager = LinearLayoutManager(it.context)
             }
 
             labelFollowing.setOnClickListener {
 
                 prepareFollowingData()
-                binding.following.setText(follow.size.toString())
-                binding.recyclerView.adapter = FollowAdapter(follow)
-                binding.recyclerView.layoutManager = LinearLayoutManager(it.context)
+                following.setText(follow.size.toString())
+                recyclerView.adapter = FollowAdapter(follow)
+                recyclerView.layoutManager = LinearLayoutManager(it.context)
             }
 
         }
@@ -91,8 +91,8 @@ class FriendlyCommunity : AppCompatActivity() {
         icon.setImageResource(R.drawable.ic_list)
 
         // menu icon click listener
-        icon.setOnClickListener { view ->
-            menu.showAsDropDown(view)
+        icon.setOnClickListener {
+            menu.showAsDropDown(it)
         }
 
     }
