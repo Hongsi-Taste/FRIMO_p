@@ -35,6 +35,7 @@ class FriendlyCommunity : AppCompatActivity() {
         binding.labelInterests.setOnClickListener{
 
             prepareInterestData(); // RecyclerView에 보여 줄 data 받아오기
+            binding.interests.setText(interest.size.toString())
             binding.recyclerView.adapter = InterestAdapter(interest)
             binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
         }
@@ -87,7 +88,7 @@ class FriendlyCommunity : AppCompatActivity() {
 
     private fun prepareInterestData() {
 
-        // Todo: 크롤링으로 data 받아오기
+        // Todo: 서버에서 interest data 받아오기
         interest.clear()
         interest.add(Interest(R.drawable.img_sample, "test1"))
         interest.add(Interest(R.drawable.img_sample, "test2"))
