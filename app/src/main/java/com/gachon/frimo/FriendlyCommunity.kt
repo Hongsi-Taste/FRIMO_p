@@ -8,9 +8,12 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.gachon.frimo.adapter.FollowAdapter
 import com.gachon.frimo.adapter.InterestAdapter
 import com.gachon.frimo.databinding.FriendlyCommunityBinding
 import com.gachon.frimo.entity.Interest
+import com.gachon.frimo.entity.UserProfile
 import com.skydoves.powermenu.MenuAnimation
 import com.skydoves.powermenu.OnMenuItemClickListener
 import com.skydoves.powermenu.PowerMenu
@@ -21,6 +24,7 @@ class FriendlyCommunity : AppCompatActivity() {
     private lateinit var menu : PowerMenu
     private lateinit var binding: FriendlyCommunityBinding
     private val interest: ArrayList<Interest> = ArrayList() // Interests
+    private val follow: ArrayList<UserProfile> = ArrayList() // follower, following
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -40,7 +44,21 @@ class FriendlyCommunity : AppCompatActivity() {
             binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
         }
 
+        binding.labelFollowers.setOnClickListener{
 
+            prepareFollowerData();
+            binding.followers.setText(follow.size.toString())
+            binding.recyclerView.adapter = FollowAdapter(follow)
+            binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        }
+
+        binding.labelFollowing.setOnClickListener{
+
+            prepareFollowingData();
+            binding.following.setText(follow.size.toString())
+            binding.recyclerView.adapter = FollowAdapter(follow)
+            binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        }
 
         // menu
         val icon = findViewById<ImageView>(R.id.ic_menu)
@@ -102,4 +120,42 @@ class FriendlyCommunity : AppCompatActivity() {
         interest.add(Interest(R.drawable.img_sample, "test10"))
 
     }
+
+    private fun prepareFollowerData(){
+
+        // Todo: 서버에서 follower data 받아오기
+        follow.clear()
+        follow.add(UserProfile(R.drawable.ic_user, "test1", "test1 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test2", "test2 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test3", "test3 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test4", "test4 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test5", "test5 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test6", "test6 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test7", "test7 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test8", "test8 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test9", "test9 description"))
+        follow.add(UserProfile(R.drawable.ic_user, "test10", "test10 description"))
+
+    }
+
+    private fun prepareFollowingData(){
+
+        // Todo: 서버에서 following data 받아오기
+        follow.clear()
+        follow.add(UserProfile(R.drawable.img_sample, "test1", "test1 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test2", "test2 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test3", "test3 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test4", "test4 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test5", "test5 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test6", "test6 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test7", "test7 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test8", "test8 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test9", "test9 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test10", "test10 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test11", "test11 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test12", "test12 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test13", "test13 description"))
+        follow.add(UserProfile(R.drawable.img_sample, "test14", "test14 description"))
+    }
+
 }
