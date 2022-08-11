@@ -39,7 +39,7 @@ android {
 
 dependencies {
 
-    // FloatingActionButton
+    // Floating Action Button
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
     // Powermenu
@@ -47,6 +47,10 @@ dependencies {
 
     // Needs
     implementation "com.github.skydoves:needs:1.1.2"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
