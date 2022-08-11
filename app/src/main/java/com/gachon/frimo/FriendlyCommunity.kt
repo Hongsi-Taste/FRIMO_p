@@ -9,9 +9,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gachon.frimo.adapter.ContentAdapter
 import com.gachon.frimo.adapter.FollowAdapter
 import com.gachon.frimo.adapter.InterestAdapter
 import com.gachon.frimo.databinding.FriendlyCommunityBinding
+import com.gachon.frimo.entity.Content
 import com.gachon.frimo.entity.Interest
 import com.gachon.frimo.entity.UserProfile
 import com.skydoves.powermenu.MenuAnimation
@@ -21,9 +23,10 @@ import com.skydoves.powermenu.PowerMenuItem
 
 class FriendlyCommunity : AppCompatActivity() {
 
-    private lateinit var menu : PowerMenu
+    private lateinit var menu: PowerMenu
     private lateinit var binding: FriendlyCommunityBinding
     private val interest: ArrayList<Interest> = ArrayList() // Interests
+    private val content: ArrayList<Content> = ArrayList() // Contents
     private val follow: ArrayList<UserProfile> = ArrayList() // follower, following
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,27 +39,35 @@ class FriendlyCommunity : AppCompatActivity() {
         // 기존 action bar 제거 후 custom action bar 넣기
         supportActionBar!!.hide()
 
-        with(binding){
+        with(binding) {
 
-            labelInterests.setOnClickListener{
+            labelInterests.setOnClickListener {
 
-                prepareInterestData(); // RecyclerView에 보여 줄 data 받아오기
+                prepareInterestData() // RecyclerView에 보여 줄 data 받아오기
                 binding.interests.setText(interest.size.toString())
                 binding.recyclerView.adapter = InterestAdapter(interest)
                 binding.recyclerView.layoutManager = GridLayoutManager(it.context, 2)
             }
 
-            labelFollowers.setOnClickListener{
+            labelContents.setOnClickListener {
 
-                prepareFollowerData();
+                prepareContentData()
+                binding.contents.setText(content.size.toString())
+                binding.recyclerView.adapter = ContentAdapter(content)
+                binding.recyclerView.layoutManager = LinearLayoutManager(it.context)
+            }
+
+            labelFollowers.setOnClickListener {
+
+                prepareFollowerData()
                 binding.followers.setText(follow.size.toString())
                 binding.recyclerView.adapter = FollowAdapter(follow)
                 binding.recyclerView.layoutManager = LinearLayoutManager(it.context)
             }
 
-            labelFollowing.setOnClickListener{
+            labelFollowing.setOnClickListener {
 
-                prepareFollowingData();
+                prepareFollowingData()
                 binding.following.setText(follow.size.toString())
                 binding.recyclerView.adapter = FollowAdapter(follow)
                 binding.recyclerView.layoutManager = LinearLayoutManager(it.context)
@@ -80,8 +91,8 @@ class FriendlyCommunity : AppCompatActivity() {
         icon.setImageResource(R.drawable.ic_list)
 
         // menu icon click listener
-        icon.setOnClickListener {
-                view -> menu.showAsDropDown(view)
+        icon.setOnClickListener { view ->
+            menu.showAsDropDown(view)
         }
 
     }
@@ -124,7 +135,21 @@ class FriendlyCommunity : AppCompatActivity() {
 
     }
 
-    private fun prepareFollowerData(){
+    private fun prepareContentData() {
+
+        content.clear()
+        content.add(Content(R.drawable.img_sample, "test1", "test1 description"))
+        content.add(Content(R.drawable.img_sample, "test2", "test2 description"))
+        content.add(Content(R.drawable.img_sample, "test3", "test3 description"))
+        content.add(Content(R.drawable.img_sample, "test4", "test4 description"))
+        content.add(Content(R.drawable.img_sample, "test5", "test5 description"))
+        content.add(Content(R.drawable.img_sample, "test6", "test6 description"))
+        content.add(Content(R.drawable.img_sample, "test7", "test7 description"))
+        content.add(Content(R.drawable.img_sample, "test8", "test8 description"))
+
+    }
+
+    private fun prepareFollowerData() {
 
         // Todo: 서버에서 follower data 받아오기
         follow.clear()
@@ -141,7 +166,7 @@ class FriendlyCommunity : AppCompatActivity() {
 
     }
 
-    private fun prepareFollowingData(){
+    private fun prepareFollowingData() {
 
         // Todo: 서버에서 following data 받아오기
         follow.clear()
