@@ -130,14 +130,14 @@ class FriendlyCommunity : AppCompatActivity() {
 
         // Todo: 서버에서 content data 받아오기
         content.clear()
-        content.add(Content(R.drawable.img_sample, "test1", "test1 description"))
-        content.add(Content(R.drawable.img_sample, "test2", "test2 description"))
-        content.add(Content(R.drawable.img_sample, "test3", "test3 description"))
-        content.add(Content(R.drawable.img_sample, "test4", "test4 description"))
-        content.add(Content(R.drawable.img_sample, "test5", "test5 description"))
-        content.add(Content(R.drawable.img_sample, "test6", "test6 description"))
-        content.add(Content(R.drawable.img_sample, "test7", "test7 description"))
-        content.add(Content(R.drawable.img_sample, "test8", "test8 description"))
+        content.add(Content(R.drawable.img_sample, "test1", "2022-08-13"))
+        content.add(Content(R.drawable.img_sample, "test2", "2022-08-13"))
+        content.add(Content(R.drawable.img_sample, "test3", "2022-08-13"))
+        content.add(Content(R.drawable.img_sample, "test4", "2022-08-13"))
+        content.add(Content(R.drawable.img_sample, "test5", "2022-08-13"))
+        content.add(Content(R.drawable.img_sample, "test6", "2022-08-13"))
+        content.add(Content(R.drawable.img_sample, "test7", "2022-08-13"))
+        content.add(Content(R.drawable.img_sample, "test8", "2022-08-13"))
 
     }
 
