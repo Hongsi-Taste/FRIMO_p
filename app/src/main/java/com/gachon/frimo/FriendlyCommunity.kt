@@ -100,7 +100,6 @@ class FriendlyCommunity : AppCompatActivity() {
     // change menu item click listener
     private val changeMenuItemClickListener =
         OnMenuItemClickListener<PowerMenuItem> { position, item ->
-            Toast.makeText(baseContext, item.title, Toast.LENGTH_SHORT).show()
 
             when (position) {
                 0 -> startActivity(Intent(this, ModifyProfile::class.java))
