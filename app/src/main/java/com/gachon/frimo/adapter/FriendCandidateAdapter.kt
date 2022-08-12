@@ -24,13 +24,26 @@ class FriendCandidateAdapter(private val dataSet: ArrayList<UserProfile>) : Recy
 
         init {
 
-            // Define click listener for the ViewHolder's View.
-            // Todo: user click시 친구 Friendly Community 화면으로 이동
-            // Todo: add button click listener
             imageview_userProfile = view.findViewById(R.id.imageview_userProfile)
             textview_userName = view.findViewById(R.id.textview_userName)
             textview_userDesc = view.findViewById(R.id.textview_userDesc)
             button_add = view.findViewById(R.id.button_add)
+
+            // (친구) 추가 버튼 클릭 시
+            button_add.setOnClickListener {
+
+                Toast.makeText(it.context, textview_userName.text.toString() + " added!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(it.context, FriendlyCommunity::class.java)
+                it.context.startActivity(intent)
+            }
+
+            // (친구) view 클릭 시
+            view.setOnClickListener {
+
+                Toast.makeText(it.context, textview_userName.text.toString() + "의 프로필로 이동합니다.!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(it.context, FriendlyCommunity::class.java)
+                it.context.startActivity(intent)
+            }
 
         }
     }
