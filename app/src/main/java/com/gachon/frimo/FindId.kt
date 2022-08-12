@@ -61,10 +61,8 @@ class FindId : AppCompatActivity() {
         OnMenuItemClickListener<PowerMenuItem> { position, item ->
             Toast.makeText(baseContext, item.title, Toast.LENGTH_SHORT).show()
 
-            lateinit var intent: Intent
             when (position) {
-                1 -> intent = Intent(this, FindPw::class.java)
+                1 -> startActivity(Intent(this, FindPw::class.java))
             }
-            startActivity(intent)
         }
 }

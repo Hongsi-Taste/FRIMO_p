@@ -33,16 +33,14 @@ class FriendCandidateAdapter(private val dataSet: ArrayList<UserProfile>) : Recy
             button_add.setOnClickListener {
 
                 Toast.makeText(it.context, textview_userName.text.toString() + " added!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(it.context, FriendlyCommunity::class.java)
-                it.context.startActivity(intent)
+                it.context.startActivity(Intent(it.context, FriendlyCommunity::class.java))
             }
 
             // (친구) view 클릭 시
             view.setOnClickListener {
 
                 Toast.makeText(it.context, textview_userName.text.toString() + "의 프로필로 이동합니다.!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(it.context, FriendlyCommunity::class.java)
-                it.context.startActivity(intent)
+                it.context.startActivity(Intent(it.context, FriendlyCommunity::class.java))
             }
 
         }

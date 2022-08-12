@@ -17,19 +17,16 @@ class Login : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonLogin.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
         binding.buttonSignUp.setOnClickListener {
-            val intent = Intent(this, TermsOfUse::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, TermsOfUse::class.java))
         }
 
         binding.buttonFindIdPw.setOnClickListener {
-            val intent = Intent(this, FindId::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, FindId::class.java))
         }
 
     }
