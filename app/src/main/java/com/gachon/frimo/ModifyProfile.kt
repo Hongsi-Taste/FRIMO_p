@@ -27,5 +27,9 @@ class ModifyProfile : AppCompatActivity() {
             startActivity(Intent(this, FriendlyCommunity::class.java))
         }
 
+        binding.buttonSetInterest.setOnClickListener {
+            startActivity(Intent(this, SetInterest::class.java))
+        }
+
     }
 }
