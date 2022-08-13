@@ -17,26 +17,26 @@
         android:scaleType="centerCrop"
         android:src="@drawable/ic_user"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/edittext_userDesc"
+        app:layout_constraintEnd_toStartOf="@+id/textview_userDesc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/CircleImageStyle" />
 
-    <EditText
-        android:id="@+id/edittext_userName"
+    <TextView
+        android:id="@+id/textview_userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="2dp"
         android:text="User name"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/edittext_userDesc"
-        app:layout_constraintStart_toStartOf="@+id/edittext_userDesc"
+        app:layout_constraintBottom_toTopOf="@+id/textview_userDesc"
+        app:layout_constraintStart_toStartOf="@+id/textview_userDesc"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <EditText
-        android:id="@+id/edittext_userDesc"
+    <TextView
+        android:id="@+id/textview_userDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="125dp"
@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_add"
         app:layout_constraintStart_toEndOf="@+id/imageview_userProfile"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_userName" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_userName" />
 
     <Button
         android:id="@+id/button_add"
@@ -55,7 +55,7 @@
         android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edittext_userDesc"
+        app:layout_constraintStart_toEndOf="@+id/textview_userDesc"
         app:layout_constraintTop_toTopOf="parent" />
 
 

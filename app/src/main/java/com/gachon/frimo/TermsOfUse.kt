@@ -17,8 +17,7 @@ class TermsOfUse : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonContinue.setOnClickListener {
-            val intent = Intent(this, SignUp::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, SignUp::class.java))
         }
 
 

@@ -44,8 +44,7 @@ class SignUp : ComponentActivity() {
 
         needs.setOnConfirmListener {
             needs.dismiss()
-            intent = Intent(this, Login::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Login::class.java))
         }
 
     }

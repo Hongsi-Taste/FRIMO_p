@@ -18,14 +18,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.floatingBtnFriendlyCommunity.setOnClickListener{
 
-            val intent = Intent(this, FriendlyCommunity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, FriendlyCommunity::class.java))
         }
 
         binding.floatingBtnTrendReport.setOnClickListener{
 
-            val intent = Intent(this, TrendReport::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, TrendReport::class.java))
         }
     }
 

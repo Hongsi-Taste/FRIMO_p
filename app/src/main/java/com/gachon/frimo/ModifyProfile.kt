@@ -25,8 +25,7 @@ class ModifyProfile : AppCompatActivity() {
         icon.setImageResource(R.drawable.ic_check)
 
         icon.setOnClickListener {
-            val intent = Intent(this, FriendlyCommunity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, FriendlyCommunity::class.java))
         }
     }
 }
