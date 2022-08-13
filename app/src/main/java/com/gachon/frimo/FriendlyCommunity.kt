@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +26,8 @@ class FriendlyCommunity : AppCompatActivity() {
     private lateinit var binding: FriendlyCommunityBinding
     private val interest: ArrayList<Interest> = ArrayList() // Interests
     private val content: ArrayList<Content> = ArrayList() // Contents
-    private val follow: ArrayList<UserProfile> = ArrayList() // follower, following
+    private val follower: ArrayList<UserProfile> = ArrayList() // follower
+    private val following: ArrayList<UserProfile> = ArrayList() // following
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -43,7 +43,7 @@ class FriendlyCommunity : AppCompatActivity() {
 
             labelInterests.setOnClickListener {
 
-                prepareInterestData() // RecyclerView에 보여 줄 data 받아오기
+                prepareInterestData()
                 interests.setText(interest.size.toString())
                 recyclerView.adapter = InterestAdapter(interest)
                 recyclerView.layoutManager = GridLayoutManager(it.context, 2)
@@ -60,16 +60,16 @@ class FriendlyCommunity : AppCompatActivity() {
             labelFollowers.setOnClickListener {
 
                 prepareFollowerData()
-                followers.setText(follow.size.toString())
-                recyclerView.adapter = FollowAdapter(follow)
+                followers.setText(follower.size.toString())
+                recyclerView.adapter = FollowAdapter(follower)
                 recyclerView.layoutManager = LinearLayoutManager(it.context)
             }
 
-            labelFollowing.setOnClickListener {
+            labelFollowings.setOnClickListener {
 
                 prepareFollowingData()
-                following.setText(follow.size.toString())
-                recyclerView.adapter = FollowAdapter(follow)
+                followings.setText(following.size.toString())
+                recyclerView.adapter = FollowAdapter(following)
                 recyclerView.layoutManager = LinearLayoutManager(it.context)
             }
 
@@ -97,6 +97,23 @@ class FriendlyCommunity : AppCompatActivity() {
 
     }
 
+    override fun onResume(){
+        super.onResume()
+
+        // RecyclerView에 보여 줄 data 받아오기
+        prepareInterestData()
+        prepareContentData()
+        prepareFollowerData()
+        prepareFollowingData()
+
+        with(binding) {
+            interests.setText(interest.size.toString())
+            contents.setText(content.size.toString())
+            followers.setText(follower.size.toString())
+            followings.setText(following.size.toString())
+        }
+    }
+
     // change menu item click listener
     private val changeMenuItemClickListener =
         OnMenuItemClickListener<PowerMenuItem> { position, item ->
@@ -122,7 +139,6 @@ class FriendlyCommunity : AppCompatActivity() {
         interest.add(Interest(R.drawable.img_sample, "test8"))
         interest.add(Interest(R.drawable.img_sample, "test9"))
         interest.add(Interest(R.drawable.img_sample, "test10"))
-
     }
 
     private fun prepareContentData() {
@@ -137,44 +153,42 @@ class FriendlyCommunity : AppCompatActivity() {
         content.add(Content(R.drawable.img_sample, "test6", "2022-08-13"))
         content.add(Content(R.drawable.img_sample, "test7", "2022-08-13"))
         content.add(Content(R.drawable.img_sample, "test8", "2022-08-13"))
-
     }
 
     private fun prepareFollowerData() {
 
         // Todo: 서버에서 follower data 받아오기
-        follow.clear()
-        follow.add(UserProfile(R.drawable.ic_user, "test1", "test1 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test2", "test2 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test3", "test3 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test4", "test4 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test5", "test5 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test6", "test6 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test7", "test7 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test8", "test8 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test9", "test9 description"))
-        follow.add(UserProfile(R.drawable.ic_user, "test10", "test10 description"))
-
+        follower.clear()
+        follower.add(UserProfile(R.drawable.ic_user, "test1", "test1 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test2", "test2 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test3", "test3 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test4", "test4 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test5", "test5 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test6", "test6 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test7", "test7 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test8", "test8 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test9", "test9 description"))
+        follower.add(UserProfile(R.drawable.ic_user, "test10", "test10 description"))
     }
 
     private fun prepareFollowingData() {
 
         // Todo: 서버에서 following data 받아오기
-        follow.clear()
-        follow.add(UserProfile(R.drawable.img_sample, "test1", "test1 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test2", "test2 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test3", "test3 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test4", "test4 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test5", "test5 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test6", "test6 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test7", "test7 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test8", "test8 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test9", "test9 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test10", "test10 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test11", "test11 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test12", "test12 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test13", "test13 description"))
-        follow.add(UserProfile(R.drawable.img_sample, "test14", "test14 description"))
+        following.clear()
+        following.add(UserProfile(R.drawable.img_sample, "test1", "test1 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test2", "test2 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test3", "test3 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test4", "test4 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test5", "test5 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test6", "test6 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test7", "test7 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test8", "test8 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test9", "test9 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test10", "test10 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test11", "test11 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test12", "test12 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test13", "test13 description"))
+        following.add(UserProfile(R.drawable.img_sample, "test14", "test14 description"))
     }
 
 }
