@@ -34,6 +34,21 @@
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
             app:shapeAppearanceOverlay="@style/CircleImageStyle" />
 
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="38dp"
+            android:gravity="center"
+            android:text="user name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+            tools:ignore="HardcodedText" />
+
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
@@ -97,21 +112,5 @@
                     android:textSize="30dp" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="38dp"
-            android:gravity="center"
-            android:text="user name"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-            tools:ignore="HardcodedText" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

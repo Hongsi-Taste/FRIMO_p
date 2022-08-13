@@ -23,9 +23,9 @@ class ModifyProfile : AppCompatActivity() {
         // menu
         val icon = findViewById<ImageView>(R.id.ic_menu)
         icon.setImageResource(R.drawable.ic_check)
-
         icon.setOnClickListener {
             startActivity(Intent(this, FriendlyCommunity::class.java))
         }
+
     }
 }
