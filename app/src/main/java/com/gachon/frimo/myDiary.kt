@@ -7,12 +7,19 @@ import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_my_diary.*
-import kotlinx.android.synthetic.main.fragment_my_diary_chat.*
-
+import com.gachon.frimo.databinding.ActivityMyDiaryBinding
+import com.gachon.frimo.databinding.FragmentMyDiaryChatBinding
+import com.gachon.frimo.databinding.FragmentMyDiaryGalleryBinding
+import com.gachon.frimo.databinding.FragmentMyDiarySecretBinding
 
 //TODO: add stt
 class MyDiary : AppCompatActivity() {
+
+    //뷰바인딩
+    private lateinit var binding: ActivityMyDiaryBinding
+    private lateinit var bindingChat: FragmentMyDiaryChatBinding
+    private lateinit var bindingSecret: FragmentMyDiarySecretBinding
+    private lateinit var bindingGallery: FragmentMyDiaryGalleryBinding
 
     //필요한 클래스 미리 불러놓기
     private lateinit var speechRecognizer: SpeechRecognizer
@@ -31,7 +38,7 @@ class MyDiary : AppCompatActivity() {
         //setListener()
 
         //버튼 누르면 듣기 시작.
-        chatRecord.setOnClickListener {
+        bindingChat.chatRecord.setOnClickListener {
             speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
             speechRecognizer.setRecognitionListener(recognitionListener)
             speechRecognizer.startListening(intent)
@@ -91,7 +98,7 @@ class MyDiary : AppCompatActivity() {
                 var matches: ArrayList<String>? = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                 if (matches != null){
                     for(i in 0 until matches.size){
-                        resView.text = matches[i]
+                        bindingChat.resView.text = matches[i]
                     }
                 }
             }
