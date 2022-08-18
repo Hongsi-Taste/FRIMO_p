@@ -1,10 +1,11 @@
-package com.gachon.frimo
+package com.gachon.frimo.diary
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.gachon.frimo.R
 
 /**
  * A simple [Fragment] subclass.

@@ -1,4 +1,4 @@
-package com.gachon.frimo
+package com.gachon.frimo.diary
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +12,7 @@ import com.gachon.frimo.databinding.FragmentMyDiaryChatBinding
 import com.gachon.frimo.databinding.FragmentMyDiaryGalleryBinding
 import com.gachon.frimo.databinding.FragmentMyDiarySecretBinding
 
-//TODO: add stt
+//TODO: add powermenu
 class MyDiary : AppCompatActivity() {
 
     //뷰바인딩
@@ -27,7 +27,7 @@ class MyDiary : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_diary)
+        setContentView(binding.root)
 
         //TODO: add permission check and of not satisfied, request permission
         //intent에 Recognizer넣어서 선언.
