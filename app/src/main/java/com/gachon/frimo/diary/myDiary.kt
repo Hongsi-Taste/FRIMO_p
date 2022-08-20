@@ -19,6 +19,7 @@ import com.skydoves.powermenu.PowerMenu
 import com.skydoves.powermenu.PowerMenuItem
 
 //TODO: add powermenu
+//TODO: find reason why no permissions Error
 class MyDiary : AppCompatActivity() {
 
     //뷰바인딩
