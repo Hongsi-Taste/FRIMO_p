@@ -20,6 +20,8 @@ class ContentDetail : AppCompatActivity() {
         binding = ContentDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Todo: Circle indicator 설정
+
         prepareCommentData()
 
         with(binding) {
