@@ -1,5 +1,6 @@
 package com.gachon.frimo.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.gachon.frimo.ContentDetail
 import com.gachon.frimo.R
 import com.gachon.frimo.entity.Content
 
@@ -26,6 +28,7 @@ class ContentAdapter(private val dataSet: ArrayList<Content>) : RecyclerView.Ada
 
             view.setOnClickListener {
                 Toast.makeText(it.context, "View Clicked", Toast.LENGTH_SHORT).show()
+                it.context.startActivity(Intent(it.context, ContentDetail::class.java))
             }
 
         }

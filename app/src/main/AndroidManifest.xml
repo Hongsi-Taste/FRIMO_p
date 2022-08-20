@@ -34,7 +34,9 @@
         <activity android:name=".FindPw" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FriendlyCommunity" />
+        <activity android:name=".ContentDetail" />
         <activity android:name=".ModifyProfile" />
+        <activity android:name=".SetInterest" />
         <activity android:name=".AddContents" />
         <activity android:name=".FriendCandidate" />
         <activity android:name=".TrendReport" />
