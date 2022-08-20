@@ -78,19 +78,19 @@ class MyDiary : AppCompatActivity() {
             }
 
             override fun onBeginningOfSpeech() {
-                TODO("Not yet implemented")
+                //TODO("Not yet implemented")
             }
 
             override fun onRmsChanged(rmsdB: Float) {
-                TODO("Not yet implemented")
+                //TODO("Not yet implemented")
             }
 
             override fun onBufferReceived(buffer: ByteArray?) {
-                TODO("Not yet implemented")
+                //TODO("Not yet implemented")
             }
 
             override fun onEndOfSpeech() {
-                TODO("Not yet implemented")
+                //TODO("Not yet implemented")
             }
             //에러메세지 출력
             override fun onError(error: Int) {
@@ -128,11 +128,11 @@ class MyDiary : AppCompatActivity() {
             }
 
             override fun onPartialResults(partialResults: Bundle?) {
-                TODO("Not yet implemented")
+                //TODO("Not yet implemented")
             }
 
             override fun onEvent(eventType: Int, params: Bundle?) {
-                TODO("Not yet implemented")
+                //TODO("Not yet implemented")
             }
 
         }
