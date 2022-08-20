@@ -38,6 +38,8 @@ class MyDiary : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMyDiaryBinding.inflate(layoutInflater)
+        bindingChat = FragmentMyDiaryChatBinding.inflate(layoutInflater)
+        setContentView(bindingChat.root)
 
         //Powermenu
         menu = PowerMenu.Builder(this)
@@ -56,7 +58,7 @@ class MyDiary : AppCompatActivity() {
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, packageName)
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ko-KR")
 
-        //setListener()
+        setListener()
 
         //버튼 누르면 듣기 시작.
         bindingChat.chatRecord.setOnClickListener {
@@ -144,5 +146,9 @@ class MyDiary : AppCompatActivity() {
 //                1 ->
 //                2 -> s
 //            }
+    }
+
+    private fun fragmentChange(i:Int){
+
     }
 }
