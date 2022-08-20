@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        //FloatingActionButton
         binding.floatingMyDiary.setOnClickListener{
             startActivity(Intent(this, MyDiary::class.java))
         }
