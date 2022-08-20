@@ -223,17 +223,17 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_btn1"
+            android:id="@+id/floatingMyDiary"
             android:layout_width="@dimen/fab_size_normal"
             android:layout_height="@dimen/fab_size_normal" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_btn_friendly_community"
+            android:id="@+id/floatingFriendlyCommunity"
             android:layout_width="@dimen/fab_size_normal"
             android:layout_height="@dimen/fab_size_normal"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_btn_trend_report"
+            android:id="@+id/floatingTrendReport"
             android:layout_width="@dimen/fab_size_normal"
             android:layout_height="@dimen/fab_size_normal" />
 
