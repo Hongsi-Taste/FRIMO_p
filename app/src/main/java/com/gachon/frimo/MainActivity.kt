@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         binding.floatingFriendlyCommunity.setOnClickListener{
             startActivity(Intent(this, FriendlyCommunity::class.java))
         }
-
         binding.floatingTrendReport.setOnClickListener{
             startActivity(Intent(this, TrendReport::class.java))
         }
