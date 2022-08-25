@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable/ground_stroke.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_heart.xml" value="0.141" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.141" />
+        <entry key="app/src/main/res/drawable/loginborder.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/main_news.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shape_black_oval.xml" value="0.141" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2061798095703126" />
@@ -27,8 +28,9 @@
         <entry key="app/src/main/res/layout/content_detail.xml" value="0.19504643962848298" />
         <entry key="app/src/main/res/layout/content_detail_comment.xml" value="0.2647058823529412" />
         <entry key="app/src/main/res/layout/content_detail_image.xml" value="0.17552083333333332" />
-        <entry key="app/src/main/res/layout/find_id.xml" value="0.14637603759765624" />
+        <entry key="app/src/main/res/layout/find_id.xml" value="0.44754333496093746" />
         <entry key="app/src/main/res/layout/find_pw.xml" value="0.1976538616677989" />
+        <entry key="app/src/main/res/layout/fragment_my_diary_chat.xml" value="0.1578125" />
         <entry key="app/src/main/res/layout/friend_candidate.xml" value="0.15677083333333333" />
         <entry key="app/src/main/res/layout/friend_candidate_view.xml" value="0.36440073649088545" />
         <entry key="app/src/main/res/layout/friendly_community.xml" value="0.19114583333333332" />
