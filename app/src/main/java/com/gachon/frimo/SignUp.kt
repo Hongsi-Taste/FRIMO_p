@@ -17,6 +17,9 @@ class SignUp : ComponentActivity() {
         setContentView(binding.root)
 
         binding.buttonSignUp.setOnClickListener {
+
+            // Todo: 회원가입
+
             startActivity(Intent(this, Login::class.java))
         }
 

@@ -2,10 +2,10 @@ package com.gachon.frimo
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 import com.gachon.frimo.databinding.FindIdBinding
 
-class FindId : AppCompatActivity() {
+class FindId : ComponentActivity() {
 
     private lateinit var binding: FindIdBinding
 
@@ -15,9 +15,6 @@ class FindId : AppCompatActivity() {
 
         binding = FindIdBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Title 변경
-        supportActionBar!!.setTitle("아이디 찾기")
 
         binding.buttonFindId.setOnClickListener {
 
