@@ -3,17 +3,17 @@ package com.gachon.frimo
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.gachon.frimo.databinding.LoginBinding
+import com.gachon.frimo.databinding.ActivityLoginBinding
 
 class Login : ComponentActivity() {
 
-    private lateinit var binding: LoginBinding
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        binding = LoginBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.buttonLogin.setOnClickListener {

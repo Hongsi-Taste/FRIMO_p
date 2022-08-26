@@ -3,17 +3,17 @@ package com.gachon.frimo
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.gachon.frimo.databinding.FindIdBinding
+import com.gachon.frimo.databinding.ActivityFindIdBinding
 
 class FindId : ComponentActivity() {
 
-    private lateinit var binding: FindIdBinding
+    private lateinit var binding: ActivityFindIdBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        binding = FindIdBinding.inflate(layoutInflater)
+        binding = ActivityFindIdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.buttonFindId.setOnClickListener {

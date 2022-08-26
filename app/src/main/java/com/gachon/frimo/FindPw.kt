@@ -3,17 +3,17 @@ package com.gachon.frimo
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.gachon.frimo.databinding.FindPwBinding
+import com.gachon.frimo.databinding.ActivityFindPwBinding
 
 class FindPw : ComponentActivity() {
 
-    private lateinit var binding: FindPwBinding
+    private lateinit var binding: ActivityFindPwBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        binding = FindPwBinding.inflate(layoutInflater)
+        binding = ActivityFindPwBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.buttonFindPw.setOnClickListener {
