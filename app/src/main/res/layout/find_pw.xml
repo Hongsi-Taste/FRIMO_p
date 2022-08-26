@@ -78,7 +78,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/login_edittext_border"
-        android:hint="Id"
+        android:hint="아이디"
         android:inputType="text"
         android:paddingStart="10dp"
         android:textColorHint="@color/black"
