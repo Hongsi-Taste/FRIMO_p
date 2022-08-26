@@ -25,7 +25,7 @@ class FindPw : AppCompatActivity() {
         binding = FindPwBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Title
+        // Title 변경
         supportActionBar!!.setTitle("비밀번호 찾기")
 
         binding.buttonFindPw.setOnClickListener {
