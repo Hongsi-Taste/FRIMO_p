@@ -53,6 +53,7 @@ class Login : ComponentActivity() {
         }
 
 //        // Todo: XML 파일에 Kakao login button 구현 이후 주석 해제할 것
+//        // Todo: Token 처리
 //        // Kakao 로그인 버튼 클릭 시
 //        binding.buttonKakaoLogin.setOnClickListener {
 //
