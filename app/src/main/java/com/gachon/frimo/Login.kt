@@ -14,15 +14,16 @@ import com.kakao.sdk.user.UserApiClient
 
 
 /**
+ * 메인화면
+ * @see com.gachon.frimo.MainActivity
+ *
+ * 약관
+ * @see com.gachon.frimo.TermsOfUse
+ *
  * ID / PW 찾기
  * @see com.gachon.frimo.FindId
  * @see com.gachon.frimo.FindPw
  *
- * 회원가입
- * @see com.gachon.frimo.SignUp
- *
- * 메인화면
- * @see com.gachon.frimo.MainActivity
  */
 
 class Login : ComponentActivity() {
@@ -40,12 +41,19 @@ class Login : ComponentActivity() {
         // Kakao SDK 초기화
         KakaoSdk.init(this, getString(R.string.kakao_native_app_key))
 
+        // 로그인 버튼 클릭 시
         binding.buttonLogin.setOnClickListener {
+
+            // Todo: 서버에 로그인 여부 받아오기
+            // Todo: Id와 PW가 일치하는 경우 Main page로 이동
+            // Todo: Id와 PW가 일치하지 않는 경우 다시 입력하라고 Toast message
+
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
 //        // Todo: XML 파일에 Kakao login button 구현 이후 주석 해제할 것
+//        // Kakao 로그인 버튼 클릭 시
 //        binding.buttonKakaoLogin.setOnClickListener {
 //
 //            /**
@@ -95,12 +103,17 @@ class Login : ComponentActivity() {
 //
 //        }
 
+        // 회원가입 버튼 클릭 시
         binding.buttonSignUp.setOnClickListener {
-            startActivity(Intent(this, SignUp::class.java))
-            finish()
+
+            // 약관 페이지로 이동
+            startActivity(Intent(this, TermsOfUse::class.java))
         }
 
+        // Id / Pw 찾기 버튼 클릭 시
         binding.buttonFindIdPw.setOnClickListener {
+
+            // 아이디 찾기 페이지로 이동
             startActivity(Intent(this, FindId::class.java))
         }
 
