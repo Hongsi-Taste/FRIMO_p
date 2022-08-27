@@ -29,7 +29,6 @@ class Login : ComponentActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private val TAG = "Login"
-    private var NATIVE_APP_KEY = "3393ece58cd3bbab0599d3f8c6d9678b"
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -38,8 +37,8 @@ class Login : ComponentActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        // Kakao SDK 초기화
-//        KakaoSdk.init(this, NATIVE_APP_KEY)
+        // Kakao SDK 초기화
+        KakaoSdk.init(this, getString(R.string.kakao_native_app_key))
 
         binding.buttonLogin.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
@@ -95,6 +94,11 @@ class Login : ComponentActivity() {
 //            }
 //
 //        }
+
+        binding.buttonSignUp.setOnClickListener {
+            startActivity(Intent(this, SignUp::class.java))
+            finish()
+        }
 
         binding.buttonFindIdPw.setOnClickListener {
             startActivity(Intent(this, FindId::class.java))

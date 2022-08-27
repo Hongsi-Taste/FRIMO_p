@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Kakao 관련
+/app/src/main/res/values/kakao_strings.xml
