@@ -39,14 +39,14 @@ android {
 
 dependencies {
 
+    // Kakao login
+    implementation "com.kakao.sdk:v2-all:2.11.0"
+
     // Floating Action Button
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
     // Powermenu
     implementation "com.github.skydoves:powermenu:2.2.0"
-
-    // Needs
-    implementation "com.github.skydoves:needs:1.1.2"
 
     // Balloon
     implementation "com.github.skydoves:balloon:1.4.7"

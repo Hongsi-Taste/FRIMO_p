@@ -13,7 +13,7 @@
         android:layout_marginBottom="40dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/editText_name"
+        app:layout_constraintBottom_toTopOf="@+id/editText_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -37,42 +37,6 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editText_name"
-        android:layout_width="290dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/login_edittext_border"
-        android:hint="이름"
-        android:inputType="text"
-        android:paddingStart="10dp"
-        android:textColorHint="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        tools:ignore="HardcodedText" />
-
-    <EditText
-        android:id="@+id/editText_email"
-        android:layout_width="290dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/login_edittext_border"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
-        android:paddingStart="10dp"
-        android:textColorHint="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText_id"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_name"
-        tools:ignore="HardcodedText" />
-
-    <EditText
         android:id="@+id/editText_id"
         android:layout_width="290dp"
         android:layout_height="50dp"
@@ -87,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_email"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
         tools:ignore="HardcodedText" />
 
     <EditText
@@ -97,49 +61,67 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/login_edittext_border"
         android:hint="비밀번호"
-        android:inputType="textPassword"
+        android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         android:textColorHint="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText_check_pw"
+        app:layout_constraintBottom_toTopOf="@+id/button_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_id"
         tools:ignore="HardcodedText" />
 
-    <EditText
-        android:id="@+id/editText_check_pw"
+    <Button
+        android:id="@+id/button_login"
         android:layout_width="290dp"
         android:layout_height="50dp"
-        android:background="@drawable/login_edittext_border"
-        android:hint="비밀번호 확인"
-        android:inputType="textPassword"
-        android:paddingStart="10dp"
-        android:textColorHint="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_signUp"
+        android:background="@drawable/rounded_corners_button"
+        android:backgroundTint="@color/mainColor_70"
+        android:text="로그인"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/two_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_pw"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/button_signUp"
-        android:layout_width="290dp"
-        android:layout_height="50dp"
+    <LinearLayout
+        android:id="@+id/two_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/rounded_corners_button"
-        android:backgroundTint="@color/mainColor_70"
-        android:text="회원가입"
-        android:textColor="@color/white"
-        android:textSize="14dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_check_pw"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@id/button_login">
 
+        <Button
+            android:id="@+id/button_signUp"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/rounded_corners_button"
+            android:backgroundTint="@color/mainColor_50"
+            android:text="회원가입"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button_findIdPw"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/rounded_corners_button"
+            android:backgroundTint="@color/mainColor_50"
+            android:text="ID / PW 찾기"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

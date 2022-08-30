@@ -1,67 +1,47 @@
 package com.gachon.frimo
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.view.Gravity
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.gachon.frimo.databinding.FindIdBinding
-import com.skydoves.powermenu.MenuAnimation
-import com.skydoves.powermenu.OnMenuItemClickListener
-import com.skydoves.powermenu.PowerMenu
-import com.skydoves.powermenu.PowerMenuItem
+import androidx.activity.ComponentActivity
+import com.gachon.frimo.databinding.ActivityFindIdBinding
 
-class FindId : AppCompatActivity() {
+/**
+ * 로그인
+ * @see com.gachon.frimo.Login
+ *
+ * PW 찾기
+ * @see com.gachon.frimo.FindPw
+ */
 
-    private lateinit var menu: PowerMenu
-    private lateinit var binding: FindIdBinding
+class FindId : ComponentActivity() {
+
+    private lateinit var binding: ActivityFindIdBinding
+    private val TAG = "FindId"
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        binding = FindIdBinding.inflate(layoutInflater)
+        binding = ActivityFindIdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 기존 action bar 제거 후 custom action bar 넣기
-        supportActionBar!!.hide()
+        // 아이디 찾기 버튼 클릭 시
+        binding.buttonFindId.setOnClickListener {
 
-        // set menu icon
-        val icon = findViewById<ImageView>(R.id.ic_menu)
-        icon.setImageResource(R.drawable.ic_list)
+            // Todo: 아이디를 찾는 데 성공하였을 경우 Login activity로 이동
+            // Todo: 아이디를 찾는 데 실패하였을 경우 Toast message 출력 및 기존 화면 유지
 
-        // menu icon click listener
-        icon.setOnClickListener { view ->
-            menu.showAsDropDown(view)
+            startActivity(Intent(this, Login::class.java))
+            finish()
         }
 
-        menu = PowerMenu.Builder(this)
-            .addItem(PowerMenuItem("Find Id", true))
-            .addItem(PowerMenuItem("Find Pw", false))
-            .setAnimation(MenuAnimation.SHOWUP_TOP_RIGHT) // popup시 menu가 뜨는 위치
-            .setTextColor(Color.BLACK)
-            .setTextGravity(Gravity.CENTER) // 글자 위치
-            .setSelectedMenuColor(getResources().getColor(R.color.purple_200))
-            .setSelectedTextColor(Color.WHITE)
-            .setOnMenuItemClickListener(changeMenuItemClickListener)
-            .build()
+        // 비밀번호 찾기 버튼 클릭 시
+        binding.buttonFindPw.setOnClickListener {
 
-        binding.buttonFindId.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
+            // 비밀번호 찾기 페이지로 이동
+            startActivity(Intent(this, FindPw::class.java))
             finish()
         }
 
     }
-
-    // change menu item click listener
-    private val changeMenuItemClickListener =
-        OnMenuItemClickListener<PowerMenuItem> { position, item ->
-
-            when (position) {
-                1 -> startActivity(Intent(this, FindPw::class.java))
-            }
-        }
 }
